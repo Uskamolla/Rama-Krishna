@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rama Krishna Uskamolla - AI & Computer Vision Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            background: rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .experience-item, .project-item {
+            border-left: 3px solid #667eea;
+            padding-left: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item::before, .project-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+
+        .experience-title, .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .experience-meta, .project-meta {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .experience-desc, .project-desc {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .experience-desc ul, .project-desc ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-desc li, .project-desc li {
+            margin-bottom: 8px;
+        }
+
+        .education-item {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .education-meta {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .coursework {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="animate-on-scroll">
+            <div class="profile-img">RK</div>
+            <h1>Rama Krishna Uskamolla</h1>
+            <p class="subtitle">AI & Computer Vision Engineer</p>
+            <div class="contact-info">
+                <a href="mailto:uskamolla.rama@gmail.com" class="contact-item">
+                    📧 uskamolla.rama@gmail.com
+                </a>
+                <a href="tel:+4915738301996" class="contact-item">
+                    📱 +49 15738301996
+                </a>
+                <a href="https://www.linkedin.com/in/rama-krishna-211b27165/" target="_blank" class="contact-item">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <section class="section animate-on-scroll">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                I'm a passionate AI and Computer Vision Engineer with a Master's in Computational Modelling and Simulation from TU Dresden. 
+                I specialize in developing cutting-edge machine learning solutions, from real-time object detection systems to multimodal AI architectures. 
+                My experience spans across MLOps, deep learning, and high-performance computing, with a strong focus on practical applications 
+                in computer vision and data science.
+            </p>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Computer Vision</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">YOLO</span>
+                        <span class="skill-tag">Object Detection</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Science</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">ElasticSearch</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & MLOps</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Student Research Assistant</div>
+                <div class="experience-meta">Fraunhofer IVI • July 2024 – August 2024 • Dresden, Germany</div>
+                <div class="experience-desc">
+                    <ul>
+                        <li>Developed edge-based real-time object detection applications, optimized and quantized YOLOv9 for mobile deployment using Kotlin and Android Studio</li>
+                        <li>Conducted comprehensive comparative analysis of object detection architectures (YOLO, SSD)</li>
+                        <li>Collaborated using Git for version control and documentation management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Student Research Assistant (Master Thesis)</div>
+                <div class="experience-meta">Fraunhofer IVI • July 2023 – June 2024 • Dresden, Germany</div>
+                <div class="experience-desc">
+                    <ul>
+                        <li>Designed automated data annotation pipeline for wildlife detection using latest transformer architectures, reducing manual annotation time</li>
+                        <li>Implemented robust outlier detection methods using clustering and autoencoders to improve dataset quality</li>
+                        <li>Fine-tuned YOLOv5 using resampling and class weighting to reduce imbalance on GPU cluster, achieving significant performance improvements</li>
+                        <li>Conducted hyperparameter optimization and comparative analysis with latest YOLO architectures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Intern</div>
+                <div class="experience-meta">Fraunhofer IVI • March 2023 – June 2023 • Dresden, Germany</div>
+                <div class="experience-desc">
+                    <ul>
+                        <li>Extracted and analyzed keywords from ElasticSearch databases using statistical analysis techniques to identify trends</li>
+                        <li>Created interactive dashboards using Kibana for data visualization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Student Research Assistant</div>
+                <div class="experience-meta">TU Dresden • November 2021 – February 2022 • Dresden, Germany</div>
+                <div class="experience-desc">
+                    <ul>
+                        <li>Developed GUI application using Python/Tkinter for pipe pressure loss calculations based on user inputs</li>
+                        <li>Implemented numerical methods for solving linear and non-linear equations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Multimodal AI Development</div>
+                <div class="project-meta">Python, PyTorch, OpenCV, Unsloth, LoRA, easyOCR</div>
+                <div class="project-desc">
+                    Developing custom multimodal model architecture by modifying model components using pretrained vision encoder to integrate image features into custom fine-tuned language models for caption generation. Fine-tuning large language models using Unsloth and LoRA for improved performance and efficiency.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Phishing Website Detection System (MLOps)</div>
+                <div class="project-meta">Python, MLflow, CI/CD, Terraform, FastAPI, Docker, AWS</div>
+                <div class="project-desc">
+                    Developed a phishing website detection system using ML to identify malicious websites based on cybersecurity indicators. Implemented complete MLOps pipeline and designed modular software architecture from scratch with REST APIs.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">RAG System for Automated Q&A</div>
+                <div class="project-meta">Python, LangChain, Phi-2, RAG, ChromaDB, Sentence Transformers, Streamlit</div>
+                <div class="project-desc">
+                    Developed Retrieval-Augmented Generation (RAG) system using Python and Microsoft Phi-2 model for automated textbook question answering. Built document processing pipeline with LangChain framework and ChromaDB vector database for semantic search.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Fluid-Structure Interaction Research</div>
+                <div class="project-meta">Abaqus, FEA, Multi-Physics Simulation</div>
+                <div class="project-desc">
+                    Performed FE simulation of fluid-filled hollow structures using Abaqus 2020. Modeled and analyzed fluid-structure interaction problems and conducted comparative analysis between models with and without fluid domains.
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-title">M.Sc. Computational Modelling and Simulation</div>
+                <div class="education-meta">Technical University Dresden • October 2019 – August 2024 • Dresden, Germany</div>
+                <div class="coursework">
+                    <strong>Relevant Coursework:</strong> Computer Vision, Machine Learning, High Performance Computing, Numerical Methods, Stochastics, Scientific Computing, Digitization and Data Analytics, CFD, Finite Element Analysis, Multifield Problems, Multibody Systems, Coupled Simulations
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 5px 15px rgba(102, 126, 234, 0.3)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
