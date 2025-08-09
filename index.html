@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rama Krishna Uskamolla - AI Engineer</title>
+    <title>Rama Krishna Uskamolla - AI Engineer & Software Developer</title>
     <style>
         * {
             margin: 0;
@@ -12,22 +12,29 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            color: #1a1a1a;
+            background: #fafafa;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         /* Navigation */
         nav {
-            padding: 2rem 0;
-            border-bottom: 1px solid #eee;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
         }
 
         .nav-content {
@@ -37,10 +44,11 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -52,73 +60,141 @@
         .nav-links a {
             text-decoration: none;
             color: #666;
-            font-weight: 400;
+            font-weight: 500;
+            font-size: 0.9rem;
             transition: color 0.2s;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #333;
+            color: #1a1a1a;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1a1a1a;
+            transition: width 0.2s ease;
         }
 
         /* Hero Section */
         .hero {
-            padding: 6rem 0;
+            padding: 8rem 0 6rem;
             text-align: center;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #999;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            text-align: left;
+            flex: 1;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.2rem;
+            font-weight: 800;
             margin-bottom: 1rem;
-            color: #333;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .hero .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
-            font-weight: 400;
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
         .hero p {
             font-size: 1rem;
-            color: #888;
-            max-width: 600px;
-            margin: 0 auto 3rem;
+            color: #666;
             line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
         }
 
         .cta {
             display: inline-block;
             padding: 1rem 2rem;
-            background: #333;
+            background: #1a1a1a;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background 0.2s;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .cta:hover {
-            background: #555;
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+
+        .cta-secondary:hover {
+            background: #1a1a1a;
+            color: white;
         }
 
         /* Section Styles */
         section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        section:last-of-type {
-            border-bottom: none;
+            padding: 5rem 0;
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
         }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 3rem;
             text-align: center;
-            color: #333;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
         }
 
         /* About Section */
@@ -130,13 +206,27 @@
         }
 
         .about-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
+        }
+
+        .skills-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .skills-card h3 {
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .skills-list {
@@ -144,60 +234,81 @@
         }
 
         .skills-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f5f5f5;
-            color: #666;
-            line-height: 1.5;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e9ecef;
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .skills-list li:last-child {
             border-bottom: none;
         }
 
+        .skills-list strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
         /* Experience Section */
         .experience-list {
             display: grid;
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
         .experience-item {
-            padding-bottom: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border-left: 4px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: start;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .experience-info h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
 
         .company {
             color: #666;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1rem;
             margin: 0;
         }
 
         .experience-date {
-            color: #888;
+            color: #1a1a1a;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             white-space: nowrap;
         }
 
         .experience-description {
-            color: #666;
-            line-height: 1.6;
+            color: #555;
+            line-height: 1.7;
         }
 
         .experience-description > p {
             margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .achievement-list {
@@ -206,43 +317,65 @@
         }
 
         .achievement-list li {
-            padding: 0.3rem 0;
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
-            color: #666;
+            color: #555;
+            line-height: 1.6;
         }
 
         .achievement-list li:before {
-            content: "•";
+            content: "→";
             position: absolute;
             left: 0;
-            color: #333;
+            color: #1a1a1a;
             font-weight: bold;
         }
 
         /* Projects Section */
-        .projects-list {
+        .projects-grid {
             display: grid;
-            gap: 3rem;
-        }
-
-        .project {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            align-items: start;
         }
 
-        .project-info h3 {
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-visual {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
             font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #333;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
         }
 
-        .project-info p {
-            color: #666;
-            margin-bottom: 1rem;
+        .project-content p {
+            color: #555;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
@@ -250,80 +383,87 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .tech-item {
-            background: #f5f5f5;
-            color: #666;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-            font-size: 0.85rem;
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .project-link {
-            color: #333;
+            color: #1a1a1a;
             text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid #333;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 2px solid #1a1a1a;
+            transition: all 0.2s ease;
         }
 
-        .project-visual {
-            background: #f8f8f8;
-            height: 200px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            font-size: 3rem;
+        .project-link:hover {
+            opacity: 0.7;
         }
 
         /* Contact Section */
-        .contact-info {
+        .contact-content {
             text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 4rem 2rem;
         }
 
-        .contact-info p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 2rem;
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
             line-height: 1.7;
+            opacity: 0.9;
         }
 
-        .contact-details {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 1.5rem;
             text-align: center;
         }
 
         .contact-item strong {
             display: block;
-            color: #333;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .contact-item a {
-            color: #666;
+            color: white;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: opacity 0.2s;
         }
 
         .contact-item a:hover {
-            color: #333;
+            opacity: 0.8;
         }
 
         /* Footer */
         footer {
             padding: 2rem 0;
             text-align: center;
-            color: #888;
+            color: #666;
             font-size: 0.9rem;
+            background: white;
+            border-radius: 12px;
+            margin-top: 2rem;
         }
 
         /* Responsive Design */
@@ -336,8 +476,28 @@
                 display: none;
             }
 
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+
+            .hero-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
             }
 
             .about-content {
@@ -345,27 +505,23 @@
                 gap: 2rem;
             }
 
-            .project {
+            .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
             }
 
-            .project-visual {
-                height: 150px;
-            }
-
-            .contact-details {
-                flex-direction: column;
-                gap: 1.5rem;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
 
             .experience-header {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 1rem;
+                align-items: flex-start;
             }
 
-            .experience-date {
-                align-self: flex-start;
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -389,25 +545,35 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Software Developer & AI Engineer</h1>
-            <p class="subtitle">3+ years building intelligent systems and data-driven solutions</p>
-            <p>Software Developer with expertise in Python, computer vision, and data analysis. I build custom applications, data processing systems, and web-based tools with a focus on real-world problem solving and collaborative development.</p>
-            <a href="#projects" class="cta">View My Work</a>
+            <div class="hero-content">
+                <div class="hero-photo">
+                    👨‍💻
+                </div>
+                <div class="hero-text">
+                    <h1>AI Engineer & Software Developer</h1>
+                    <p class="subtitle">3+ years building intelligent systems and data-driven solutions</p>
+                    <p>Software Developer with expertise in Python, computer vision, and data analysis. I build custom applications, data processing systems, and web-based tools with a focus on real-world problem solving and collaborative development.</p>
+                    <div class="cta-group">
+                        <a href="#projects" class="cta">View My Work</a>
+                        <a href="#contact" class="cta cta-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>I hold a Master's in Computational Modelling and Simulation from TU Dresden (2019-2024), where I developed expertise in computer vision, machine learning, and high-performance computing.</p>
                     <p>My work focuses on practical AI applications, particularly in computer vision, data processing, and MLOps. I enjoy tackling complex problems and building scalable technology solutions that help users solve real-world challenges.</p>
                     <p>I'm fluent in English (C1) and have intermediate German (B1), allowing me to work effectively in international teams.</p>
                 </div>
-                <div>
-                    <h3 style="margin-bottom: 1rem; color: #333;">Technical Skills</h3>
+                <div class="skills-card">
+                    <h3>Technical Expertise</h3>
                     <ul class="skills-list">
                         <li><strong>Programming:</strong> Python, C++, C, Linux</li>
                         <li><strong>Computer Vision & AI:</strong> OpenCV, PyTorch, Scikit-learn, CNN, Object Detection</li>
@@ -423,7 +589,7 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Work Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="experience-list">
                 <div class="experience-item">
                     <div class="experience-header">
@@ -446,8 +612,8 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="experience-info">
-                            <h3>Research Assistant (Master Thesis) - Digital Process Group</h3>
-                            <p class="company">Fraunhofer IVI, Dresden</p>
+                            <h3>Computer Vision Research Assistant (Master Thesis)</h3>
+                            <p class="company">Fraunhofer IVI, Dresden - Digital Process Group</p>
                         </div>
                         <div class="experience-date">Jul 2023 - Jun 2024</div>
                     </div>
@@ -464,8 +630,8 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="experience-info">
-                            <h3>Data Science Intern - Digital Process Group</h3>
-                            <p class="company">Fraunhofer IVI, Dresden</p>
+                            <h3>Data Science Intern</h3>
+                            <p class="company">Fraunhofer IVI, Dresden - Digital Process Group</p>
                         </div>
                         <div class="experience-date">Mar 2023 - Jun 2023</div>
                     </div>
@@ -502,10 +668,10 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-list">
-                <div class="project">
+            <div class="projects-grid">
+                <div class="project-card">
                     <div class="project-visual">🤖</div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3>Multimodal AI Development</h3>
                         <p>Developing custom multimodal model architecture by modifying pretrained vision encoders to integrate image features into fine-tuned language models for caption generation. Implementing OCR solutions optimized for edge devices.</p>
                         <div class="tech-list">
@@ -516,14 +682,14 @@
                             <span class="tech-item">LoRA</span>
                             <span class="tech-item">easyOCR</span>
                         </div>
-                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
 
-                <div class="project">
+                <div class="project-card">
                     <div class="project-visual">🔒</div>
-                    <div class="project-info">
-                        <h3>Phishing Website Detection System (MLOps)</h3>
+                    <div class="project-content">
+                        <h3>Phishing Website Detection System</h3>
                         <p>Developed a complete phishing website detection system using machine learning to identify malicious websites based on cybersecurity indicators. Implemented full MLOps pipeline with modular architecture and REST APIs.</p>
                         <div class="tech-list">
                             <span class="tech-item">Python</span>
@@ -534,14 +700,14 @@
                             <span class="tech-item">Docker</span>
                             <span class="tech-item">AWS</span>
                         </div>
-                        <a href="#" class="project-link">View Project</a>
+                        <a href="https://github.com/Uskamolla/network_security" class="project-link">View Project →</a>
                     </div>
                 </div>
 
-                <div class="project">
+                <div class="project-card">
                     <div class="project-visual">📚</div>
-                    <div class="project-info">
-                        <h3>RAG System for Textbook Q&A (CASML Hackathon)</h3>
+                    <div class="project-content">
+                        <h3>RAG System for Textbook Q&A</h3>
                         <p>Developed Retrieval-Augmented Generation system using Microsoft Phi-2 model for automated textbook question answering. Built document processing pipeline with semantic search and interactive web interface.</p>
                         <div class="tech-list">
                             <span class="tech-item">Python</span>
@@ -551,13 +717,13 @@
                             <span class="tech-item">Sentence Transformers</span>
                             <span class="tech-item">Streamlit</span>
                         </div>
-                        <a href="#" class="project-link">View Project</a>
+                        <a href="https://github.com/Uskamolla/Text_Book_QA" class="project-link">View Project →</a>
                     </div>
                 </div>
 
-                <div class="project">
+                <div class="project-card">
                     <div class="project-visual">⚙️</div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3>Fluid-Structure Interaction Research</h3>
                         <p>Performed finite element simulation of fluid-filled hollow structures using Abaqus 2020. Modeled and analyzed fluid-structure interaction problems with comparative analysis between different modeling approaches.</p>
                         <div class="tech-list">
@@ -566,7 +732,7 @@
                             <span class="tech-item">Multi Physics Simulation</span>
                             <span class="tech-item">Numerical Methods</span>
                         </div>
-                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
             </div>
@@ -576,10 +742,10 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-info">
-                <p>I'm always interested in discussing new opportunities, collaborating on projects, or sharing knowledge about AI and software development.</p>
-                <div class="contact-details">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <p>I'm always interested in discussing new opportunities, collaborating on projects, or sharing knowledge about AI and software development. Let's build something amazing together!</p>
+                <div class="contact-grid">
                     <div class="contact-item">
                         <strong>Email</strong>
                         <a href="mailto:uskamolla.rama@gmail.com">uskamolla.rama@gmail.com</a>
@@ -590,11 +756,11 @@
                     </div>
                     <div class="contact-item">
                         <strong>LinkedIn</strong>
-                        <a href="https://www.linkedin.com/in/rama-krishna-211b27165/" target="_blank">linkedin.com/in/rama-krishna-211b27165</a>
+                        <a href="https://www.linkedin.com/in/rama-krishna-211b27165/" target="_blank">Connect with me</a>
                     </div>
                     <div class="contact-item">
                         <strong>GitHub</strong>
-                        <a href="https://github.com/uskamolla" target="_blank">github.com/uskamolla</a>
+                        <a href="https://github.com/uskamolla" target="_blank">View my code</a>
                     </div>
                 </div>
             </div>
@@ -604,22 +770,59 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Rama Krishna Uskamolla. All rights reserved.</p>
+            <p>&copy; 2024 Rama Krishna Uskamolla. Crafted with passion for technology and innovation.</p>
         </div>
     </footer>
 
     <script>
-        // Simple smooth scrolling
+        // Smooth scrolling with offset for fixed nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
                         behavior: 'smooth'
                     });
                 }
             });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(250, 250, 250, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(250, 250, 250, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
         });
     </script>
 </body>
